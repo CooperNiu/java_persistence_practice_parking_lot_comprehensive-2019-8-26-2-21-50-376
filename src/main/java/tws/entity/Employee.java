@@ -1,12 +1,13 @@
 package tws.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Employee implements Serializable {
     private int id;
     private String name;
     private String age;
-
+    private List<ParkingLot> lotList;
     public Employee() {
 
     }
@@ -39,5 +40,13 @@ public class Employee implements Serializable {
 
     public void setAge(String age) {
         this.age = age;
+    }
+
+    public List<ParkingLot> getLotList() {
+        return lotList;
+    }
+
+    public void setLotList(List<ParkingLot> lotList) {
+        this.lotList = lotList;
     }
 }

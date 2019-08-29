@@ -2,13 +2,11 @@ package tws.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import tws.entity.Employee;
+import tws.entity.ParkingLot;
 import tws.repository.EmployeeMapper;
+import tws.repository.ParkingLotMapper;
 
 import java.net.URI;
 import java.util.List;
@@ -19,6 +17,8 @@ public class EmployeeController {
 
     @Autowired
     private EmployeeMapper employeeMapper;
+    @Autowired
+    private ParkingLotMapper parkingLotMapper;
 
     @GetMapping("")
     public ResponseEntity<List<Employee>> getAll() {
@@ -29,5 +29,13 @@ public class EmployeeController {
     public ResponseEntity<Employee> insert(@RequestBody Employee employee) {
         employeeMapper.insert(employee);
         return ResponseEntity.created(URI.create("/employees/" + employee.getId())).body(employee);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Employee> getParkingBoyAndParkingLot(@PathVariable int id) {
+        List<ParkingLot> parkingLotList = parkingLotMapper.selectById(id);
+        Employee employee = employeeMapper.selectById(id);
+        employee.setLotList(parkingLotList);
+        return ResponseEntity.ok(employee);
     }
 }
