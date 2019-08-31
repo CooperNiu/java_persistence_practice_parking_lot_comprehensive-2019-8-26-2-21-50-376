@@ -1,15 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="tws.repository.EmployeeMapper">
-    <select id="selectAll" resultType="tws.entity.ParkingBoy">
-        select * from `parkingBoy`;
-    </select>
+<mapper namespace="tws.repository.ParkingBoyMapper">
 
-    <insert id="insert">
-        insert into parkingBoy values(#{parkingBoy.employeeID},#{parkingBoy.name},#{parkingBoy.age}, #{parkingBoy.parkingLotID});
-    </insert>
-
-    <select id="selectById" resultType="tws.entity.ParkingBoy">
-        select * from `parkingBoy` where employeeID = #{employeeID};
-    </select>
+	<select id="select" parameterType="java.lang.String" resultType="tws.entity.ParkingBoy">
+		select * from `parking_boy`		
+	</select>
+	
+	<select id="selectById" resultType="tws.entity.ParkingBoy">
+		select * from `parking_boy` where
+		<if test="id != null and id != '' ">
+        employeeId = #{id}
+       </if>	
+	</select>
+	
+	<select id="selectByPage" parameterType="java.util.Map" resultType="tws.entity.ParkingBoy">
+		SELECT *
+		FROM `parking_boy`
+		ORDER BY employeeId
+		OFFSET #{map.startIndex} ROWS FETCH NEXT #{map.pageSize} ROWS ONLY;
+	</select>
+	
+	<insert id="insert" parameterType="tws.entity.ParkingBoy">
+  		insert into `parking_boy` values 
+  		(#{parkingBoy.employeeId},#{parkingBoy.name});
+	</insert>
+	
+	<update id="update">
+      update `parking_boy` set
+      <if test="parkingBoy.name != null and parkingBoy.name != '' ">
+        name = #{parkingBoy.name}
+      </if>
+      where employeeId = #{id}
+    </update>
+    
+     <delete id="deleteById" parameterType="java.lang.String">
+      delete from `parking_boy` 
+      where employeeId = #{id}
+    </delete>
 </mapper>

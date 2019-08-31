@@ -1,27 +1,45 @@
 package tws.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ParkingBoy {
 
-    private int employeeId;
-    private String name;
+	private String employeeId;
+	private String name;
 
-    public ParkingBoy() {
+	private List<ParkingLot> parkingLots = new ArrayList<ParkingLot>();
+	
+	public ParkingBoy() {
+		
+	}
+	
+	public ParkingBoy(String employeeId,String name) {
+		this.employeeId = employeeId;
+		this.name = name;
+	}
+	
+	public String getEmployeeId() {
+		return employeeId;
+	}
 
-    }
+	public void setEmployeeId(String employeeId) {
+		this.employeeId = employeeId;
+	}
 
-    public int getEmployeeId() {
-        return employeeId;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public void setEmployeeId(int employeeId) {
-        this.employeeId = employeeId;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public List<ParkingLot> getParkingLots() {
+		return parkingLots;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public void setParkingLots(List<ParkingLot> parkingLots2) {
+		this.parkingLots = parkingLots2;
+	}
 }

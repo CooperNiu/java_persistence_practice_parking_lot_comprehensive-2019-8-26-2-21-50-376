@@ -1,15 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="tws.repository.ParkingLotMapper">
-    <select id="selectAll" resultType="tws.entity.ParkingLot">
-        select * from `parkinglot`;
-    </select>
 
-    <insert id="insert">
-        insert  into parkinglot values(#{parkinglot.parkingLotID},#{parkinglot.capacity},#{parkinglot.employeeID});
-    </insert>
-
-    <select id="selectById" resultType="tws.entity.ParkingLot">
-        select * from `parkinglot` where employeeID = #{employeeID};
-    </select>
+	<select id="select" resultType="tws.entity.ParkingLot">
+		select * from `parking_lot`
+	</select>
+	
+	<select id="selectByParkingBoyId" resultType="tws.entity.ParkingLot">
+		select * from `parking_lot` where
+		<if test="parkingBoyId != null and parkingBoyId != '' ">
+        parkingBoyId = #{parkingBoyId}
+       </if>
+	</select>
+	
+	<select id="selectByPage" parameterType="java.util.Map" resultType="tws.entity.ParkingLot">
+		SELECT *
+		FROM `parking_lot`
+		ORDER BY parkingLotId
+		OFFSET #{map.startIndex} ROWS FETCH NEXT #{map.pageSize} ROWS ONLY;
+	</select>
+	
+	<insert id="insert" parameterType="tws.entity.ParkingLot">
+  		insert into `parking_lot` values 
+  		(#{parkingLot.parkingLotId},#{parkingLot.availablePositionCount},
+  		 #{parkingLot.capatity},#{parkingLot.parkingBoyId});
+	</insert>
+	
+	<update id="update">
+      update `parking_lot` set
+      <if test="parkingLot.availablePositionCount != null and parkingLot.availablePositionCount != '' ">
+        availablePositionCount = #{parkingLot.availablePositionCount},
+      </if>
+      <if test="parkingLot.capatity != null and parkingLot.capatity != '' ">
+        capatity = #{parkingLot.capatity}
+      </if>
+      <if test="parkingLot.parkingBoyId != null and parkingLot.parkingBoyId != '' ">
+        ,parkingBoyId = #{parkingLot.parkingBoyId}
+      </if>
+      where parkingLotId = #{id}
+    </update>
+    
+     <delete id="deleteById" parameterType="java.lang.String">
+      delete from `parking_lot` 
+      where parkingLotId = #{id}
+    </delete>
 </mapper>

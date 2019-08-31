@@ -1,50 +1,56 @@
 package tws.entity;
 
 public class ParkingLot {
+	
+	private String parkingLotId;
+	
+	private int availablePositionCount;
+	
+	private int capatity;
+	
+	private String parkingBoyId;
+	
+	public ParkingLot(String parkingLotId,int availablePositionCount,int capatity) {
+		this.parkingLotId = parkingLotId;
+		this.availablePositionCount = availablePositionCount;
+		this.capatity = capatity;
+	}
+	
+	public ParkingLot() {
+		
+	}
 
-    private int parkingLotId;
+	public String getParkingLotId() {
+		return parkingLotId;
+	}
 
-    private int availablePositionCount;
+	public void setParkingLotId(String parkingLotId) {
+		this.parkingLotId = parkingLotId;
+	}
 
-    private int capatity;
+	public int getAvailablePositionCount() {
+		return availablePositionCount;
+	}
 
-    private int parkingBoyId;
+	public void setAvailablePositionCount(int availablePositionCount) {
+		this.availablePositionCount = availablePositionCount;
+	}
 
-    public ParkingLot() {
+	public int getCapatity() {
+		return capatity;
+	}
 
-    }
+	public void setCapatity(int capatity) {
+		this.capatity = capatity;
+	}
 
-    public int getParkingLotId() {
-        return parkingLotId;
-    }
+	public String getParkingBoyId() {
+		return parkingBoyId;
+	}
 
-    public void setParkingLotId(int parkingLotId) {
-        this.parkingLotId = parkingLotId;
-    }
-
-    public int getAvailablePositionCount() {
-        return availablePositionCount;
-    }
-
-    public void setAvailablePositionCount(int availablePositionCount) {
-        this.availablePositionCount = availablePositionCount;
-    }
-
-    public int getCapatity() {
-        return capatity;
-    }
-
-    public void setCapatity(int capatity) {
-        this.capatity = capatity;
-    }
-
-    public int getParkingBoyId() {
-        return parkingBoyId;
-    }
-
-    public void setParkingBoyId(int parkingBoyId) {
-        this.parkingBoyId = parkingBoyId;
-    }
-
+	public void setParkingBoyId(String parkingBoyId) {
+		this.parkingBoyId = parkingBoyId;
+	}
+	
 
 }
