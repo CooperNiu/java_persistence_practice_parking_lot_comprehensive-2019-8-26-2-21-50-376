@@ -4,26 +4,28 @@ import java.io.Serializable;
 import java.util.List;
 
 public class Employee implements Serializable {
-    private int id;
+    private int employeeID;
     private String name;
     private String age;
     private List<ParkingLot> lotList;
+    private String parkingLotID;
     public Employee() {
 
     }
 
-    public Employee(int id, String name, String age) {
-        this.id = id;
+    public Employee(int employeeID, String name, String age, String parkingLotID) {
+        this.employeeID = employeeID;
         this.name = name;
         this.age = age;
+        this.parkingLotID = parkingLotID;
     }
 
-    public int getId() {
-        return id;
+    public int getEmployeeID() {
+        return employeeID;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setEmployeeID(int employeeID) {
+        this.employeeID = employeeID;
     }
 
     public String getName() {
@@ -48,5 +50,13 @@ public class Employee implements Serializable {
 
     public void setLotList(List<ParkingLot> lotList) {
         this.lotList = lotList;
+    }
+
+    public String getParkingLotID() {
+        return parkingLotID;
+    }
+
+    public void setParkingLotID(String parkingLotID) {
+        this.parkingLotID = parkingLotID;
     }
 }

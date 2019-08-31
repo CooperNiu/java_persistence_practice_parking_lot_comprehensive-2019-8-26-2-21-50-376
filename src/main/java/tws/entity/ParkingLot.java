@@ -3,15 +3,15 @@ package tws.entity;
 public class ParkingLot {
     private String parkingLotID;
     private int capacity;
-    private int employeeId;
+    private int employeeID;
 
     public ParkingLot() {
     }
 
-    public ParkingLot(String parkingLotID, int capacity,int employeeId) {
+    public ParkingLot(String parkingLotID, int capacity,int employeeID) {
         this.parkingLotID = parkingLotID;
         this.capacity = capacity;
-        this.employeeId = capacity;
+        this.employeeID = employeeID;
     }
 
     public String getParkingLotID() {
@@ -30,11 +30,11 @@ public class ParkingLot {
         this.capacity = capacity;
     }
 
-    public int getEmployeeId() {
-        return employeeId;
+    public int getEmployeeID() {
+        return employeeID;
     }
 
-    public void setEmployeeId(int employeeId) {
-        this.employeeId = employeeId;
+    public void setEmployeeID(int employeeID) {
+        this.employeeID = employeeID;
     }
 }

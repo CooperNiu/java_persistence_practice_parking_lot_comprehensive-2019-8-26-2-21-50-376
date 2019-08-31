@@ -6,10 +6,10 @@
     </select>
 
     <insert id="insert">
-        insert  into employee values(#{employee.id},#{employee.name},#{employee.age});
+        insert into employee values(#{employee.employeeID},#{employee.name},#{employee.age}, #{employee.parkingLotID});
     </insert>
 
     <select id="selectById" resultType="tws.entity.Employee">
-        select * from `employee` where id = #{id};
+        select * from `employee` where employeeID = #{employeeID};
     </select>
 </mapper>

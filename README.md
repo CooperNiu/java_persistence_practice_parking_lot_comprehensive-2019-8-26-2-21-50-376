@@ -17,7 +17,7 @@
 As a manager, I want to create and list all parking boys. So that I can find someone to park cars for the customer.
 
 AC1. I should be able to create parking boy to the system. The parking boy contains the following information:
-employeeID: The employee id is a non-empty String representing the unique ID for a parking boy.
+employeeID: The employee employeeID is a non-empty String representing the unique ID for a parking boy.
 
 AC2. I should be able to list ALL the parking boys in the system. Each parking boy should include his employeeID.
 
@@ -26,7 +26,7 @@ AC2. I should be able to list ALL the parking boys in the system. Each parking b
 As a manager, I want to create and list all parking lots so that that parking boys can park cars into them.
 
 AC1. I should be able to create a parking lot in the system. The parking lot contains the following information:
-parkingLotID: The parking lot id is a non-empty String representing the unique ID for a parking lot.
+parkingLotID: The parking lot employeeID is a non-empty String representing the unique ID for a parking lot.
 capacity: The capacity of the parking lot. It is an integer from 1 - 100.
 
 AC2. I should be able to list ALL parking lots in the system. Each parking lot should contain its parkingLotID, availablePositionCount and capacity of each parking lot.

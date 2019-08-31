@@ -29,6 +29,6 @@ public class ParkingLotController {
     @PostMapping("")
     public ResponseEntity<ParkingLot> insert(@RequestBody ParkingLot parkingLot) {
         parkingLotMapper.insert(parkingLot);
-        return ResponseEntity.created(URI.create("/parklots/" + parkingLot.getParkingLotID())).body(parkingLot);
+        return ResponseEntity.created(URI.create("/parkinglots/" + parkingLot.getParkingLotID())).body(parkingLot);
     }
 }
