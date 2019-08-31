@@ -1,12 +1,25 @@
-CREATE TABLE employee (
-  employeeID varchar PRIMARY KEY,
-  name VARCHAR(64) NOT NULL,
-  age   int(4) NOT NULL,
-  parkingLotID varchar (100)
+CREATE TABLE `parking_boy` (
+
+`employee_id` int(10) NOT NULL,
+
+`name` varchar(10) NULL,
+
+PRIMARY KEY (`employee_id`)
+
 );
-CREATE TABLE parkinglot (
-  parkingLotID INTEGER PRIMARY KEY,
-  capacity INTEGER NOT NULL,
-  employeeID INTEGER NOT NULL,
-  FOREIGN KEY (employeeID) REFERENCES employee ( employeeID )
+
+
+
+CREATE TABLE `parking_lot` (
+
+`parking_lot_id` int(10) NOT NULL,
+
+`availablePositionCount` int(3) NULL,
+
+`capatity` int(3) NULL,
+
+`parking_boy_id` int(10) NULL,
+
+PRIMARY KEY (`parking_lot_id`)
+
 );

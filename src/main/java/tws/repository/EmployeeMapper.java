@@ -1,16 +1,20 @@
 package tws.repository;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import tws.entity.Employee;
+import org.apache.ibatis.annotations.Select;
+
+import tws.entity.ParkingBoy;
 
 import java.util.List;
 
 @Mapper
-public interface EmployeeMapper {
-    List<Employee> selectAll();
+public interface ParkingBoyMapper {
 
-   void insert(@Param("employee") Employee employee);
+    @Select("select * from parking_boy")
+    List<ParkingBoy> selectAll();
 
-    Employee selectById(@Param("id") int id);
+    @Insert("insert into parking_boy values(#{parkingBoy.employeeId},#{parkingBoy.name})")
+    void insert(@Param("parkingBoy") ParkingBoy employee);
 }

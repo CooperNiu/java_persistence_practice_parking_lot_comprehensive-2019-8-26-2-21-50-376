@@ -1,4 +1,4 @@
-CREATE TABLE employee (
+CREATE TABLE parkingBoy (
   employeeID varchar PRIMARY KEY,
   name VARCHAR(64) NOT NULL,
   age   int(4) NOT NULL,

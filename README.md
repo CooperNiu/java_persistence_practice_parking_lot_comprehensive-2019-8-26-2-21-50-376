@@ -17,7 +17,7 @@
 As a manager, I want to create and list all parking boys. So that I can find someone to park cars for the customer.
 
 AC1. I should be able to create parking boy to the system. The parking boy contains the following information:
-employeeID: The employee employeeID is a non-empty String representing the unique ID for a parking boy.
+employeeID: The parkingBoy employeeID is a non-empty String representing the unique ID for a parking boy.
 
 AC2. I should be able to list ALL the parking boys in the system. Each parking boy should include his employeeID.
 

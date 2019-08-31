@@ -1,40 +1,50 @@
 package tws.entity;
 
 public class ParkingLot {
-    private String parkingLotID;
-    private int capacity;
-    private int employeeID;
+
+    private int parkingLotId;
+
+    private int availablePositionCount;
+
+    private int capatity;
+
+    private int parkingBoyId;
 
     public ParkingLot() {
+
     }
 
-    public ParkingLot(String parkingLotID, int capacity,int employeeID) {
-        this.parkingLotID = parkingLotID;
-        this.capacity = capacity;
-        this.employeeID = employeeID;
+    public int getParkingLotId() {
+        return parkingLotId;
     }
 
-    public String getParkingLotID() {
-        return parkingLotID;
+    public void setParkingLotId(int parkingLotId) {
+        this.parkingLotId = parkingLotId;
     }
 
-    public void setParkingLotID(String parkingLotID) {
-        this.parkingLotID = parkingLotID;
+    public int getAvailablePositionCount() {
+        return availablePositionCount;
     }
 
-    public int getCapacity() {
-        return capacity;
+    public void setAvailablePositionCount(int availablePositionCount) {
+        this.availablePositionCount = availablePositionCount;
     }
 
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
+    public int getCapatity() {
+        return capatity;
     }
 
-    public int getEmployeeID() {
-        return employeeID;
+    public void setCapatity(int capatity) {
+        this.capatity = capatity;
     }
 
-    public void setEmployeeID(int employeeID) {
-        this.employeeID = employeeID;
+    public int getParkingBoyId() {
+        return parkingBoyId;
     }
+
+    public void setParkingBoyId(int parkingBoyId) {
+        this.parkingBoyId = parkingBoyId;
+    }
+
+
 }
